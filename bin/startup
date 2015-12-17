@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+/**
+ * @author Robin Duda
+ *
+ * Entry point/Startup/Bootfile.
+ */
+
+var params = require('./params');
+
+if (params.webserver.is || params.any)
+    var webserver = require('./frontend/webserver');
+
+if (params.chatserver.is || params.any)
+    var chatserver = require('./frontend/chatserver');
+
+if (params.backend.is || params.any)
+    var connector = require('./backend/connector');
